@@ -1,0 +1,53 @@
+---
+layout: base.njk
+title: "Blog"
+---
+
+<div class="page-container">
+    <h1>TalkSoon Blog</h1>
+    
+    <p>Welcome to our blog! Here you'll find helpful articles, tips, and resources about speech and language development. Check back regularly for new content to support your communication journey.</p>
+    
+    {% if collections.posts.length > 0 %}
+    <div class="blog-posts">
+        {% for post in collections.posts %}
+        <article class="blog-post-preview">
+            <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+            <div class="post-meta">
+                <time>{{ post.data.date | dateFormat }}</time>
+                {% if post.data.tags %}
+                <div class="post-tags">
+                    {% for tag in post.data.tags %}
+                        {% if tag != "posts" %}
+                        <span class="tag">{{ tag }}</span>
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+            {% if post.data.excerpt %}
+            <p class="post-excerpt">{{ post.data.excerpt }}</p>
+            {% endif %}
+            <a href="{{ post.url }}" class="read-more">Read More →</a>
+        </article>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="no-posts">
+        <h2>Coming Soon</h2>
+        <p>We're working on bringing you valuable content including:</p>
+        <ul>
+            <li>Early language development milestones</li>
+            <li>Fun activities to boost vocabulary at home</li>
+            <li>Understanding autism and communication</li>
+            <li>Tips for supporting late talkers</li>
+            <li>Stuttering myths vs. facts</li>
+            <li>Creating a language-rich environment</li>
+        </ul>
+        
+        <p>In the meantime, if you have specific questions or concerns about speech and language development, don't hesitate to reach out for a personalized consultation.</p>
+        
+        <a href="/contact" class="cta-button">Schedule a Consultation</a>
+    </div>
+    {% endif %}
+</div> 

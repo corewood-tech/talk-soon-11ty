@@ -1,0 +1,102 @@
+---
+layout: base.njk
+title: "Contact"
+---
+
+<div class="page-container">
+    <h1>Contact TalkSoon</h1>
+    
+    <p>Ready to take the first step toward better communication? We're here to help you on your journey to clearer, more confident speech and language skills.</p>
+    
+    <div class="contact-layout">
+        <!-- Contact Form -->
+        <div class="contact-form-section">
+            <h2>Send Us a Message</h2>
+            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
+                <input type="hidden" name="subject" value="New Contact Form Submission from TalkSoon Website">
+                <input type="hidden" name="from_name" value="TalkSoon Website">
+                
+                <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Phone</label>
+                    <input type="tel" id="phone" name="phone">
+                </div>
+                
+                <div class="form-group">
+                    <label for="service">Area of Concern</label>
+                    <select id="service" name="service">
+                        <option value="">Select a service...</option>
+                        <option value="late-talker">Late Talker</option>
+                        <option value="difficult-to-understand">Difficult to Understand</option>
+                        <option value="grammar-vocabulary">Grammar & Vocabulary</option>
+                        <option value="autism">Autism</option>
+                        <option value="stuttering">Stuttering</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="age">Child's Age (if applicable)</label>
+                    <input type="text" id="age" name="age" placeholder="e.g., 3 years old">
+                </div>
+                
+                <div class="form-group">
+                    <label for="message">Message *</label>
+                    <textarea id="message" name="message" rows="5" required placeholder="Please describe your concerns or questions..."></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="preferred-contact">Preferred Contact Method</label>
+                    <select id="preferred-contact" name="preferred_contact">
+                        <option value="email">Email</option>
+                        <option value="phone">Phone</option>
+                        <option value="either">Either</option>
+                    </select>
+                </div>
+                
+                <button type="submit" class="submit-button">Send Message</button>
+            </form>
+        </div>
+        
+        <!-- Contact Information -->
+        <div class="contact-info-section">
+            <div class="contact-info-card">
+                <h3>Contact Information</h3>
+                <div class="contact-item">
+                    <strong>Email:</strong> info@talksoon.co.cr
+                </div>
+                <div class="contact-item">
+                    <strong>Phone:</strong> +506 XXXX-XXXX
+                </div>
+                <div class="contact-item">
+                    <strong>Location:</strong> Southern Zone, Costa Rica
+                </div>
+                <div class="contact-item">
+                    <strong>Hours:</strong> Monday - Friday<br>8:00 AM - 5:00 PM
+                </div>
+            </div>
+            
+            <div class="what-to-expect">
+                <h3>What to Expect</h3>
+                <p>Your initial consultation will include:</p>
+                <ul>
+                    <li>Comprehensive assessment of communication needs</li>
+                    <li>Discussion of goals and concerns</li>
+                    <li>Personalized treatment recommendations</li>
+                    <li>Scheduling of regular therapy sessions</li>
+                    <li>Home practice strategies for continued progress</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div> 

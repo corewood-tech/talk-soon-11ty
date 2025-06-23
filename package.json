@@ -1,0 +1,22 @@
+{
+  "name": "talksoon-site",
+  "version": "1.0.0",
+  "description": "Static site for Speech Language Pathology services in Costa Rica",
+  "main": "index.js",
+  "scripts": {
+    "build": "eleventy",
+    "serve": "eleventy --serve",
+    "dev": "eleventy --serve --watch",
+    "clean": "rm -rf _site"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.1"
+  },
+  "keywords": [
+    "eleventy",
+    "static-site",
+    "speech-language-pathology"
+  ],
+  "author": "TalkSoon",
+  "license": "MIT"
+} 
