@@ -31,10 +31,55 @@ main {
 .landing-container {
   min-height: calc(100vh - 100px);
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
   padding: 2rem;
   position: relative;
+}
+
+/* Header Logo Styles */
+.header-logo {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 1000;
+  text-decoration: none;
+  transition: opacity 0.3s ease;
+}
+
+.header-logo:hover {
+  opacity: 0.8;
+}
+
+.header-logo-image {
+  width: 76px; /* 10% bigger than 69px (total 26% bigger than original) */
+  height: auto;
+  filter: drop-shadow(0 4px 15px rgba(18, 65, 83, 0.15));
+}
+
+.header-logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.header-logo-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-color);
+  margin: 0;
+  letter-spacing: 0.1em;
+  line-height: 1;
+}
+
+.header-logo-subtitle {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--highlight-color);
+  margin: 0.25rem 0 0 0;
+  letter-spacing: 0.2em;
+  line-height: 1;
 }
 
 .infographic-layout {
@@ -44,53 +89,92 @@ main {
   max-width: 1200px;
   width: 100%;
   align-items: center;
+  margin: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.logo-section {
+/* Markie's Picture Section */
+.markie-section {
   display: flex;
   justify-content: center;
   align-items: center;
   position: relative;
 }
 
-.company-logo {
-  width: 325px; /* 30% larger than 250px */
-  height: auto;
+.markie-picture {
+  width: 350px;
+  height: 350px;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
   z-index: 10;
+  text-decoration: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 50%;
 }
 
-.logo-image {
+.markie-picture:hover {
+  transform: scale(1.05);
+}
+
+.markie-picture:hover .markie-image {
+  box-shadow: 0 20px 50px rgba(18, 65, 83, 0.3);
+}
+
+/* Decorative Frame Styles (Homepage Only) */
+.decorative-frame {
+  position: absolute;
+  bottom: 0;
+  left: -200px;
+  width: 54%; /* 10% smaller than 60% */
+  height: 311px; /* 10% smaller than 346px */
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.decor-left {
   width: 100%;
-  height: auto;
-  max-width: 325px;
+  height: 100%;
+  opacity: 0.8;
+}
+
+/* Page Decorative Frame Styles (About, Contact, Blog) */
+.page-decorative-frame {
+  position: fixed;
+  top: 2rem;
+  right: 2rem;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-end;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.page-decor {
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  transform: scaleX(-1) scaleY(-1); /* Flip horizontally and vertically for right side */
+}
+
+.markie-image {
+  width: 100%;
+  height: 100%;
   object-fit: contain;
+  object-position: center;
+  border-radius: 50%;
   filter: drop-shadow(0 10px 30px rgba(18, 65, 83, 0.15));
-  margin-bottom: 1rem;
-}
-
-.logo-text {
-  text-align: center;
-}
-
-.logo-title {
-  font-size: 2.2rem;
-  font-weight: 700;
-  color: var(--text-color);
-  margin: 0;
-  letter-spacing: 0.1em;
-}
-
-.logo-subtitle {
-  font-size: 1rem;
-  font-weight: 400;
-  color: var(--highlight-color);
-  margin: 0.25rem 0 0 0;
-  letter-spacing: 0.2em;
+  border: 5px solid white;
+  box-shadow: 0 15px 40px rgba(18, 65, 83, 0.2);
 }
 
 .radiating-links {
@@ -111,12 +195,20 @@ main {
   border-left: 5px solid var(--accent-color);
   position: relative;
   transform-origin: left center;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
 }
 
 .concern-link:hover {
   transform: translateX(10px) scale(1.02);
   box-shadow: 0 12px 35px rgba(18, 65, 83, 0.15);
   border-left-color: var(--highlight-color);
+}
+
+.concern-content {
+  flex: 1;
 }
 
 .concern-link h3 {
@@ -131,6 +223,26 @@ main {
   color: var(--text-color);
   opacity: 0.8;
   line-height: 1.5;
+}
+
+.concern-icon {
+  flex-shrink: 0;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.concern-icon img {
+  width: 48px;
+  height: 48px;
+  filter: brightness(0) saturate(100%) invert(14%) sepia(31%) saturate(1084%) hue-rotate(160deg) brightness(95%) contrast(90%);
+  transition: filter 0.3s ease;
+}
+
+.concern-link:hover .concern-icon img {
+  filter: brightness(0) saturate(100%) invert(50%) sepia(88%) saturate(463%) hue-rotate(153deg) brightness(98%) contrast(85%);
 }
 
 /* Connecting Lines Effect */
@@ -200,26 +312,59 @@ main {
 
 /* Responsive Design */
 @media (max-width: 768px) {
+  .header-logo {
+    position: fixed;
+    top: 15px; /* 15px from top of screen */
+    left: 50%;
+    transform: translateX(-50%);
+    justify-content: center;
+  }
+  
+  .landing-container {
+    padding: 1rem;
+    padding-bottom: 8rem; /* Ensure space above footer */
+  }
+  
   .infographic-layout {
     grid-template-columns: 1fr;
     gap: 3rem;
     text-align: center;
+    margin-top: 6rem;
+    position: relative;
+    transform: none;
+    top: auto;
+    left: auto;
   }
   
-  .company-logo {
-    width: 260px; /* 30% larger than 200px */
+  .markie-picture {
+    width: 280px;
+    height: 280px;
   }
   
-  .logo-image {
-    max-width: 260px;
+  .decorative-frame {
+    display: none; /* Hide decorative frame on mobile */
   }
   
-  .logo-title {
-    font-size: 1.8rem;
+  /* Page container adjustments for mobile */
+  .page-container {
+    padding-top: 6rem; /* Make room for fixed header logo */
+    padding-bottom: 4rem; /* Ensure space above footer */
   }
   
-  .logo-subtitle {
-    font-size: 0.9rem;
+  /* Blog tags mobile fix */
+  .post-meta {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .post-tags {
+    max-width: 100%;
+  }
+  
+  /* Hide page decorative frame on mobile */
+  .page-decorative-frame {
+    display: none;
   }
   
   .concern-link::before {
@@ -245,6 +390,7 @@ main {
   .concern-link {
     padding: 1.2rem 1.5rem;
     margin: 0;
+    gap: 1rem;
   }
   
   .concern-link h3 {
@@ -255,20 +401,35 @@ main {
     font-size: 0.9rem;
   }
   
-  .company-logo {
-    width: 234px; /* 30% larger than 180px */
+  .concern-icon {
+    width: 50px;
+    height: 50px;
   }
   
-  .logo-image {
-    max-width: 234px;
+  .concern-icon img {
+    width: 40px;
+    height: 40px;
   }
   
-  .logo-title {
-    font-size: 1.5rem;
+  .header-logo-image {
+    width: 63px; /* 10% bigger than 57px (total 26% bigger than original) */
   }
   
-  .logo-subtitle {
-    font-size: 0.8rem;
+  .header-logo-title {
+    font-size: 1.3rem;
+  }
+  
+  .header-logo-subtitle {
+    font-size: 0.7rem;
+  }
+  
+  .markie-picture {
+    width: 240px;
+    height: 240px;
+  }
+  
+  .decorative-frame {
+    display: none; /* Hide decorative frame on mobile */
   }
 }
 
@@ -506,6 +667,7 @@ main {
 .post-tags {
   display: flex;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
 .tag {
