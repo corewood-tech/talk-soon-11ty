@@ -4,6 +4,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/js");
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/icons");
+  
+  // Copy favicon files
+  eleventyConfig.addPassthroughCopy("src/*.ico");
+  eleventyConfig.addPassthroughCopy("src/*.png");
+  eleventyConfig.addPassthroughCopy("src/site.webmanifest");
 
   // Blog posts collection
   eleventyConfig.addCollection("posts", function(collectionApi) {
