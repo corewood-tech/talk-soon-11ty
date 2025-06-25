@@ -10,7 +10,8 @@
     "clean": "rm -rf _site"
   },
   "devDependencies": {
-    "@11ty/eleventy": "^2.0.1"
+    "@11ty/eleventy": "^2.0.1",
+    "@11ty/eleventy-img": "^6.0.4"
   },
   "keywords": [
     "eleventy",
@@ -19,4 +20,4 @@
   ],
   "author": "TalkSoon",
   "license": "MIT"
-} 
+}

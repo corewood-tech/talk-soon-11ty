@@ -1,6 +1,7 @@
 ---
 layout: base.njk
-title: "About"
+title: "About Markie - Licensed Speech Language Pathologist Southern Zone Costa Rica"
+description: "Meet Markie, CCC-SLP certified speech language pathologist with 10 years experience providing childhood communication therapy, late talker support, and autism services in Southern Zone Costa Rica."
 ---
 
 <!-- Decorative Frame for Page Header -->
@@ -13,15 +14,111 @@ title: "About"
     
     <p>My name is Markie, and I have been a speech-language pathologist (SLP) for 10 years. My gift in life is to help people become confident communicators. I work with all ages from birth to the elderly, but my true passion is helping kids learn to communicate. Before becoming an SLP, I was a preschool teacher for 5 years. I absolutely love helping young children become the best communicators they can be.</p>
     
+    <!-- Carousel 1: Personal/Lifestyle Images -->
+    <div class="image-carousel" id="carousel1">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-slide active">
+                    {% image "src/images/pictures/smile.jpg", "Markie smiling", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+                <div class="carousel-slide">
+                    {% image "src/images/pictures/coffee.jpg", "Enjoying coffee time", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+                <div class="carousel-slide">
+                    {% image "src/images/pictures/sweater.jpg", "Casual moment", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+                <div class="carousel-slide">
+                    {% image "src/images/pictures/pumpkin.jpg", "Seasonal fun", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+            </div>
+            <button class="carousel-btn carousel-btn-prev" onclick="moveSlide('carousel1', -1)">‹</button>
+            <button class="carousel-btn carousel-btn-next" onclick="moveSlide('carousel1', 1)">›</button>
+        </div>
+        <div class="carousel-dots">
+            <span class="dot active" onclick="currentSlide('carousel1', 1)"></span>
+            <span class="dot" onclick="currentSlide('carousel1', 2)"></span>
+            <span class="dot" onclick="currentSlide('carousel1', 3)"></span>
+            <span class="dot" onclick="currentSlide('carousel1', 4)"></span>
+        </div>
+    </div>
+    
     <p>I have extensive training and experience providing speech therapy services to children: from babies who are a few months old to 10 year olds. I know how to design and implement engaging speech therapy sessions for all ages that enable children to reach their speech and language goals. I use multi-sensory cues (touch, visual, auditory, tactile) to give feedback and instruction that helps children learn to correct their speech sound errors. I use strategies including sign language, parent coaching, and modeling to get toddlers who aren't talking (or aren't talking much) to say their first words. I help autistic kids learn to recognize and respond to the social cues around them. I provide specific instructions in research-based fluency enhancing strategies to help kids who stutter be as fluent as they want to be.</p>
     
     <p>I have a master's degree in speech-language pathology from the University of Northern Colorado. I have ASHA certification also known as CCC-SLP: Certificate of Clinical Competence Speech-language Pathology from the American Speech-Language-Hearing Association. I am also licensed to practice speech therapy in Colorado and a handful of other states.</p>
+    
+    <!-- Carousel 2: Nature/Adventure Images -->
+    <div class="image-carousel" id="carousel2">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-slide active">
+                    {% image "src/images/pictures/beach.jpg", "Beautiful beach scenery", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+                <div class="carousel-slide">
+                    {% image "src/images/pictures/hike.jpg", "Hiking adventure", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+                <div class="carousel-slide">
+                    {% image "src/images/pictures/jungle-hug.jpg", "Jungle exploration", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+                <div class="carousel-slide">
+                    {% image "src/images/pictures/mirador.jpg", "Scenic viewpoint", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+                <div class="carousel-slide">
+                    {% image "src/images/pictures/path.jpg", "Nature path", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+            </div>
+            <button class="carousel-btn carousel-btn-prev" onclick="moveSlide('carousel2', -1)">‹</button>
+            <button class="carousel-btn carousel-btn-next" onclick="moveSlide('carousel2', 1)">›</button>
+        </div>
+        <div class="carousel-dots">
+            <span class="dot active" onclick="currentSlide('carousel2', 1)"></span>
+            <span class="dot" onclick="currentSlide('carousel2', 2)"></span>
+            <span class="dot" onclick="currentSlide('carousel2', 3)"></span>
+            <span class="dot" onclick="currentSlide('carousel2', 4)"></span>
+            <span class="dot" onclick="currentSlide('carousel2', 5)"></span>
+        </div>
+    </div>
     
     <p>In the course of my career, I have worked with many varied populations. I treated elderly adults in an assisted living facility who had dementia, strokes, swallowing disorders, developmental disorders, brain trauma, and injury recovery. I have experience working with middle school students (11-14 years old) to expand their language, improve their grammar, correct their speech sound errors, learn fluency remediation (stuttering) strategies, increase their pragmatic (social) skills, and even improve their reading skills.</p>
     
     <p>I have provided direct in-person speech therapy in preschools, elementary schools, and middle schools. I have years of experience providing virtual/telehealth speech therapy services to kids and families of all ages. I spent 4 years providing early intervention to children from infants to five years old in their homes.</p>
     
     <p><strong>Where can you find me? Usually on the floor playing toys or a game.</strong></p>
+    
+    <!-- Carousel 3: Food/Local Culture Images -->
+    <div class="image-carousel" id="carousel3">
+        <div class="carousel-container">
+            <div class="carousel-track">
+                <div class="carousel-slide active">
+                    {% image "src/images/pictures/seafood.jpg", "Fresh seafood", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+                <div class="carousel-slide">
+                    {% image "src/images/pictures/smile-seafood.jpg", "Enjoying local cuisine", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+                <div class="carousel-slide">
+                    {% image "src/images/pictures/caque.jpg", "Local delicacy", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+                <div class="carousel-slide">
+                    {% image "src/images/pictures/cuisinga.jpg", "Regional food", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+                <div class="carousel-slide">
+                    {% image "src/images/pictures/cookies.jpg", "Sweet treats", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+                <div class="carousel-slide">
+                    {% image "src/images/pictures/schnitzel.jpg", "Comfort food", "(max-width: 768px) 100vw, 400px" %}
+                </div>
+            </div>
+            <button class="carousel-btn carousel-btn-prev" onclick="moveSlide('carousel3', -1)">‹</button>
+            <button class="carousel-btn carousel-btn-next" onclick="moveSlide('carousel3', 1)">›</button>
+        </div>
+        <div class="carousel-dots">
+            <span class="dot active" onclick="currentSlide('carousel3', 1)"></span>
+            <span class="dot" onclick="currentSlide('carousel3', 2)"></span>
+            <span class="dot" onclick="currentSlide('carousel3', 3)"></span>
+            <span class="dot" onclick="currentSlide('carousel3', 4)"></span>
+            <span class="dot" onclick="currentSlide('carousel3', 5)"></span>
+            <span class="dot" onclick="currentSlide('carousel3', 6)"></span>
+        </div>
+    </div>
     
     <p>If you are in the Uvita, Ojochal, or other towns in the Southern Pacific region of Costa Rica, and you have questions about your child's speech and language development, please reach out.</p>
     
