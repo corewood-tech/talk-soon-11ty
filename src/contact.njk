@@ -39,61 +39,129 @@ description: "Contact licensed speech language pathologist Markie for childhood 
     </div>
     
     <!-- Contact Form -->
-    <div class="contact-form-section">
+    <div class="contact-form-section" id="contact-form-section">
         <h2>Send Us a Message</h2>
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-form">
-                <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE">
-                <input type="hidden" name="subject" value="New Contact Form Submission from TalkSoon Website">
-                <input type="hidden" name="from_name" value="TalkSoon Website">
-                
-                <div class="form-group">
-                    <label for="name">Name *</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                
-                <div class="form-group">
-                    <label for="phone">Phone</label>
-                    <input type="tel" id="phone" name="phone">
-                </div>
-                
-                <div class="form-group">
-                    <label for="service">Area of Concern</label>
-                    <select id="service" name="service">
-                        <option value="">Select a service...</option>
-                        <option value="late-talker">Late Talker</option>
-                        <option value="difficult-to-understand">Difficult to Understand</option>
-                        <option value="grammar-vocabulary">Grammar & Vocabulary</option>
-                        <option value="autism">Autism</option>
-                        <option value="stuttering">Stuttering</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                
-                <div class="form-group">
-                    <label for="age">Child's Age (if applicable)</label>
-                    <input type="text" id="age" name="age" placeholder="e.g., 3 years old">
-                </div>
-                
-                <div class="form-group">
-                    <label for="message">Message *</label>
-                    <textarea id="message" name="message" rows="5" required placeholder="Please describe your concerns or questions..."></textarea>
-                </div>
-                
-                <div class="form-group">
-                    <label for="preferred-contact">Preferred Contact Method</label>
-                    <select id="preferred-contact" name="preferred_contact">
-                        <option value="email">Email</option>
-                        <option value="phone">Phone</option>
-                        <option value="either">Either</option>
-                    </select>
-                </div>
-                
-                <button type="submit" class="submit-button">Send Message</button>
-            </form>
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contact-form">
+            <input type="hidden" name="access_key" value="f5439a37-67ad-42d9-9f0f-96ac95dd477e">
+            <input type="hidden" name="subject" value="New Contact Form Submission from TalkSoon Website">
+            <input type="hidden" name="from_name" value="TalkSoon Website">
+            
+            <div class="form-group">
+                <label for="name">Name *</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="email">Email *</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" name="phone">
+            </div>
+            
+            <div class="form-group">
+                <label for="service">Area of Concern</label>
+                <select id="service" name="service">
+                    <option value="">Select a service...</option>
+                    <option value="late-talker">Late Talker</option>
+                    <option value="difficult-to-understand">Difficult to Understand</option>
+                    <option value="grammar-vocabulary">Grammar & Vocabulary</option>
+                    <option value="autism">Autism</option>
+                    <option value="stuttering">Stuttering</option>
+                    <option value="other">Other</option>
+                </select>
+            </div>
+            
+            <div class="form-group">
+                <label for="age">Child's Age (if applicable)</label>
+                <input type="text" id="age" name="age" placeholder="e.g., 3 years old">
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message *</label>
+                <textarea id="message" name="message" rows="5" required placeholder="Please describe your concerns or questions..."></textarea>
+            </div>
+            
+            <div class="form-group">
+                <label for="preferred-contact">Preferred Contact Method</label>
+                <select id="preferred-contact" name="preferred_contact">
+                    <option value="email">Email</option>
+                    <option value="phone">Phone</option>
+                    <option value="either">Either</option>
+                </select>
+            </div>
+            
+            <button type="submit" class="submit-button">Send Message</button>
+        </form>
+    </div>
+    
+    <!-- Thank You Message (Hidden by default) -->
+    <div class="thank-you-section" id="thank-you-section" style="display: none;">
+        <!-- Decorative Frame for Thank You -->
+        <div class="page-decorative-frame">
+            <img src="/images/decor-left.svg" alt="" class="page-decor">
         </div>
-</div> 
+        
+        <div class="thank-you-content">
+            <div class="thank-you-header">
+                <h2>Thank You for Reaching Out to TalkSoon!</h2>
+            </div>
+            
+            <div class="thank-you-message">
+                <p>We appreciate you taking the time to contact us. Your message has been successfully sent, and we will be reaching out as soon as possible.</p>
+                
+                <p>In the meantime, feel free to explore our resources or reach out directly if you have any urgent questions.</p>
+                
+                <div class="thank-you-actions">
+                    <a href="/" class="cta-button">Return to Home</a>
+                    <a href="/blog" class="cta-button secondary">Read Our Blog</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+document.getElementById('contact-form').addEventListener('submit', async function(e) {
+    e.preventDefault();
+    
+    const form = e.target;
+    const formData = new FormData(form);
+    const submitButton = form.querySelector('.submit-button');
+    
+    // Disable submit button and show loading state
+    submitButton.disabled = true;
+    submitButton.textContent = 'Sending...';
+    
+    try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (response.ok) {
+            // Hide the contact form section
+            document.getElementById('contact-form-section').style.display = 'none';
+            
+            // Show the thank you section
+            document.getElementById('thank-you-section').style.display = 'block';
+            
+            // Scroll to the thank you section
+            document.getElementById('thank-you-section').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        } else {
+            throw new Error('Form submission failed');
+        }
+    } catch (error) {
+        // Re-enable the submit button
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+        
+        // Show error message
+        alert('There was an error sending your message. Please try again or contact us directly.');
+    }
+});
+</script> 

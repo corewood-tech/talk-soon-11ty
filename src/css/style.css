@@ -489,8 +489,6 @@ main {
   box-shadow: 0 8px 25px rgba(18, 65, 83, 0.1);
 }
 
-
-
 .contact-details {
   display: flex;
   flex-wrap: wrap;
@@ -576,8 +574,6 @@ main {
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(99, 172, 192, 0.3);
 }
-
-
 
 .contact-item {
   line-height: 1.5;
@@ -902,5 +898,93 @@ main {
   
   .carousel-btn-next {
     right: 10px;
+  }
+}
+
+/* Thank You Section Styles */
+.thank-you-section {
+  margin-top: 2rem;
+  position: relative;
+}
+
+.thank-you-content {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 8px 25px rgba(18, 65, 83, 0.1);
+  text-align: center;
+  border-left: 5px solid var(--accent-color);
+}
+
+.thank-you-header h2 {
+  color: var(--highlight-color);
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.thank-you-message p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: var(--text-color);
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
+.thank-you-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.thank-you-actions .cta-button {
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+}
+
+.thank-you-actions .cta-button.secondary {
+  background: white;
+  color: var(--highlight-color);
+  border: 2px solid var(--highlight-color);
+}
+
+.thank-you-actions .cta-button.secondary:hover {
+  background: var(--highlight-color);
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* Submit button loading state */
+.submit-button:disabled {
+  background: rgba(18, 65, 83, 0.5);
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-button:disabled:hover {
+  transform: none;
+  box-shadow: 0 5px 15px rgba(18, 65, 83, 0.2);
+}
+
+/* Mobile styles for thank you section */
+@media (max-width: 768px) {
+  .thank-you-content {
+    padding: 2rem 1.5rem;
+  }
+  
+  .thank-you-header h2 {
+    font-size: 1.8rem;
+  }
+  
+  .thank-you-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .thank-you-actions .cta-button {
+    width: 100%;
+    max-width: 250px;
   }
 } 
