@@ -1,59 +1,56 @@
 ---
 layout: base.njk
-title: "Speech Language Pathology Blog - Childhood Communication Tips Southern Zone Costa Rica"
-description: "Expert speech language pathology blog with tips for childhood communication development, late talker support, autism resources, and speech therapy advice from licensed SLP in Southern Zone Costa Rica."
+title: "TalkSoon Blog - Speech Language Pathology Resources and Insights"
+description: "Expert insights and resources on childhood speech and language development from licensed speech language pathologist Markie. Covering late talkers, autism, stuttering, and more in Southern Zone Costa Rica."
 ---
 
 <!-- Decorative Frame for Page Header -->
-<div class="page-decorative-frame">
-    <img src="/images/decor-left.svg" alt="" class="page-decor">
+<div class="page-decorative-frame" role="presentation" aria-hidden="true">
+    <img src="/images/decor-left.svg" alt="" class="page-decor" role="presentation">
 </div>
 
 <div class="page-container">
-    <h1>TalkSoon Blog</h1>
+    <header>
+        <h1>TalkSoon Blog</h1>
+        <p>Expert insights and practical guidance on childhood speech and language development, covering everything from late talkers to autism support.</p>
+    </header>
     
-    <p>Welcome to our blog! Here you'll find helpful articles, tips, and resources about speech and language development. Check back regularly for new content to support your communication journey.</p>
-    
-    {% if collections.posts.length > 0 %}
-    <div class="blog-posts">
-        {% for post in collections.posts %}
+    {% if collections.posts %}
+    <section class="blog-posts" aria-labelledby="blog-posts-heading">
+        <h2 id="blog-posts-heading" class="visually-hidden">Latest Articles</h2>
+        {% for post in collections.posts | reverse %}
         <article class="blog-post-preview">
-            <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
-            <div class="post-meta">
-                <time>{{ post.data.date | dateFormat }}</time>
-                {% if post.data.tags %}
-                <div class="post-tags">
-                    {% for tag in post.data.tags %}
-                        {% if tag != "posts" %}
-                        <span class="tag">{{ tag }}</span>
-                        {% endif %}
-                    {% endfor %}
+            <header>
+                <h2><a href="{{ post.url }}">{{ post.data.title }}</a></h2>
+                <div class="post-meta">
+                    <time datetime="{{ post.date | htmlDateString }}">{{ post.date | dateFormat }}</time>
+                    {% if post.data.tags %}
+                    <div class="post-tags" role="list" aria-label="Article topics">
+                        {% for tag in post.data.tags %}
+                            {% if tag != "posts" %}
+                            <span class="tag" role="listitem">#{{ tag }}</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
                 </div>
-                {% endif %}
-            </div>
+            </header>
             {% if post.data.excerpt %}
             <p class="post-excerpt">{{ post.data.excerpt }}</p>
             {% endif %}
-            <a href="{{ post.url }}" class="read-more">Read More →</a>
+            <a href="{{ post.url }}" class="read-more" aria-label="Read full article: {{ post.data.title }}">Read More →</a>
         </article>
         {% endfor %}
-    </div>
+    </section>
     {% else %}
-    <div class="no-posts">
+    <section class="no-posts">
         <h2>Coming Soon</h2>
-        <p>We're working on bringing you valuable content including:</p>
+        <p>We're working on bringing you valuable content about speech and language development. In the meantime, explore our services:</p>
         <ul>
-            <li>Early language development milestones</li>
-            <li>Fun activities to boost vocabulary at home</li>
-            <li>Understanding autism and communication</li>
-            <li>Tips for supporting late talkers</li>
-            <li>Stuttering myths vs. facts</li>
-            <li>Creating a language-rich environment</li>
+            <li><a href="/services/late-talker">Late Talker Support</a></li>
+            <li><a href="/services/difficult-to-understand">Speech Clarity Therapy</a></li>
+            <li><a href="/contact">Schedule a consultation</a></li>
         </ul>
-        
-        <p>In the meantime, if you have specific questions or concerns about speech and language development, don't hesitate to reach out for a personalized consultation.</p>
-        
-        <a href="/contact" class="cta-button">Schedule a Consultation</a>
-    </div>
+    </section>
     {% endif %}
 </div> 

@@ -4,6 +4,9 @@
   --text-color: #124153;
   --highlight-color: #63acc0;
   --accent-color: #9ac55d;
+  --error-color: #d73527;
+  --success-color: #28a745;
+  --focus-color: #0066cc;
 }
 
 /* Reset and Base Styles */
@@ -720,7 +723,9 @@ main {
 
 /* Individual Blog Post Styles */
 .blog-post {
-  margin-top: 2rem;
+  max-width: 700px;
+  margin: 2rem auto 0 auto;
+  padding: 0 2rem;
 }
 
 .post-header {
@@ -737,8 +742,6 @@ main {
 }
 
 .post-content {
-  max-width: 700px;
-  margin: 0 auto;
   line-height: 1.8;
 }
 
@@ -986,5 +989,359 @@ main {
   .thank-you-actions .cta-button {
     width: 100%;
     max-width: 250px;
+  }
+}
+
+/* Accessibility: Screen reader only content */
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+
+
+/* Focus indicators */
+*:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* Remove default focus for mouse users */
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Enhanced focus for interactive elements */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+}
+
+/* Form error styles */
+.form-errors {
+  background: #fdeaea;
+  border: 2px solid var(--error-color);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.form-errors h3 {
+  color: var(--error-color);
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.form-errors ul {
+  margin-left: 1.5rem;
+  color: var(--error-color);
+}
+
+.field-error {
+  color: var(--error-color);
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+  display: block;
+}
+
+.help-text {
+  font-size: 0.9rem;
+  color: var(--text-color);
+  opacity: 0.7;
+  margin-top: 0.25rem;
+}
+
+/* Required field indicator */
+.required span[aria-label="required"] {
+  color: var(--error-color);
+  font-weight: bold;
+}
+
+/* Form description */
+.form-description {
+  font-size: 0.95rem;
+  color: var(--text-color);
+  opacity: 0.8;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+
+/* Invalid field styling */
+input[aria-invalid="true"],
+select[aria-invalid="true"],
+textarea[aria-invalid="true"] {
+  border-color: var(--error-color) !important;
+  box-shadow: 0 0 0 2px rgba(215, 53, 39, 0.2) !important;
+}
+
+/* Carousel accessibility improvements */
+.carousel-btn:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+  transform: translateY(-50%) scale(1.1);
+}
+
+.dot:focus-visible {
+  outline: 3px solid var(--focus-color);
+  outline-offset: 2px;
+  transform: scale(1.3);
+}
+
+/* Button loading state accessibility */
+.submit-button[aria-busy="true"] {
+  cursor: wait;
+  position: relative;
+}
+
+.submit-button[aria-busy="true"]:after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  margin: auto;
+  border: 2px solid transparent;
+  border-top-color: var(--bg-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Improved link accessibility - using aria-label instead of visible text */
+
+/* Thank you section focus management */
+.thank-you-section h2:focus {
+  outline: none;
+}
+
+/* Ensure interactive elements have minimum touch target size */
+@media (max-width: 768px) {
+  .carousel-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+  
+  .dot {
+    min-width: 44px;
+    min-height: 44px;
+    border-radius: 22px;
+  }
+  
+  .concern-link {
+    min-height: 44px;
+  }
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  
+  .carousel-track {
+    transition: none !important;
+  }
+  
+  .concern-link {
+    animation: none !important;
+  }
+}
+
+/* Breadcrumb Navigation */
+.breadcrumb {
+  margin: 2rem 0 1rem 0;
+  padding: 0 2rem;
+}
+
+.breadcrumb-footer {
+  margin: 2rem 0 0 0;
+  padding: 2rem 0 0 0;
+  border-top: 2px solid #f0f0f0;
+  text-align: center;
+}
+
+.breadcrumb-list {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  overflow: hidden;
+}
+
+.breadcrumb-item {
+  display: flex;
+  align-items: center;
+  min-width: 0;
+  flex-shrink: 1;
+}
+
+.breadcrumb-item:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 300px;
+}
+
+.breadcrumb-item:not(:last-child)::after {
+  content: "›";
+  margin: 0 0.5rem;
+  color: var(--text-color);
+  opacity: 0.6;
+}
+
+.breadcrumb-item a {
+  color: var(--highlight-color);
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.breadcrumb-item a:hover {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.breadcrumb-item[aria-current="page"] {
+  color: var(--text-color);
+  opacity: 0.8;
+  font-weight: 500;
+}
+
+/* Article CTA Section */
+.article-cta {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 2rem 0;
+}
+
+.article-cta h2 {
+  color: var(--highlight-color);
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+}
+
+.article-cta p {
+  margin-bottom: 1.5rem;
+  color: var(--text-color);
+  font-size: 1.1rem;
+}
+
+/* Enhanced post meta for individual posts */
+.post-header .post-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: var(--text-color);
+  opacity: 0.8;
+}
+
+.post-header .post-date {
+  font-weight: 500;
+}
+
+.post-header .post-tags[role="list"] {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.post-header .tag[role="listitem"] {
+  background: var(--accent-color);
+  color: white;
+  padding: 0.25rem 0.75rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+/* Mobile breadcrumb improvements */
+@media (max-width: 768px) {
+  .breadcrumb {
+    padding: 0 1rem;
+    margin: 1rem 0 0.5rem 0;
+  }
+  
+  .breadcrumb-list {
+    font-size: 0.85rem;
+  }
+  
+  .breadcrumb-item:last-child {
+    max-width: 200px;
+  }
+  
+  .article-cta {
+    padding: 1.5rem 0;
+  }
+  
+  .article-cta h2 {
+    font-size: 1.5rem;
+  }
+  
+  .blog-post {
+    padding: 0 1rem;
+  }
+  
+  .post-header {
+    margin-top: 5rem;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --bg-color: #ffffff;
+    --text-color: #000000;
+    --highlight-color: #0066cc;
+    --accent-color: #008000;
+  }
+  
+  .concern-link {
+    border: 2px solid var(--text-color);
+  }
+  
+  .submit-button {
+    border: 2px solid var(--text-color);
+  }
+  
+  .breadcrumb-item a {
+    text-decoration: underline;
   }
 } 

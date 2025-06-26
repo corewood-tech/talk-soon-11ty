@@ -2,30 +2,93 @@
 layout: base.njk
 ---
 
-<article class="blog-post">
-    <div class="page-container">
-        <header class="post-header">
-            <h1>{{ title }}</h1>
-            <div class="post-meta">
-                <time datetime="{{ date | htmlDateString }}">{{ date | dateFormat }}</time>
-                {% if tags %}
-                <div class="post-tags">
-                    {% for tag in tags %}
-                        {% if tag != "posts" %}
-                        <span class="tag">{{ tag }}</span>
-                        {% endif %}
-                    {% endfor %}
-                </div>
-                {% endif %}
+<!-- Article Schema Markup -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }}",
+  "description": "{{ description or excerpt }}",
+  "author": {
+    "@type": "Person",
+    "name": "Markie",
+    "jobTitle": "Licensed Speech Language Pathologist",
+    "hasCredential": [
+      "CCC-SLP",
+      "ASHA Certification"
+    ]
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "TalkSoon Speech Language Pathology",
+    "url": "https://talksoon.org",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://talksoon.org/images/logo.png"
+    }
+  },
+  "datePublished": "{{ date | htmlDateString }}",
+  "dateModified": "{{ date | htmlDateString }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://talksoon.org{{ page.url }}"
+  },
+  "articleSection": "Speech Language Pathology",
+  "keywords": "{{ tags | join(', ') if tags }}",
+  "inLanguage": "en-US"
+}
+</script>
+
+<!-- Decorative Frame for Page Header -->
+<div class="page-decorative-frame" role="presentation" aria-hidden="true">
+    <img src="/images/decor-left.svg" alt="" class="page-decor" role="presentation">
+</div>
+
+<article class="blog-post" role="main">
+    <header class="post-header">
+        <h1>{{ title }}</h1>
+        <div class="post-meta">
+            <time datetime="{{ date | htmlDateString }}" class="post-date">
+                {{ date | dateFormat }}
+            </time>
+            {% if tags %}
+            <div class="post-tags" role="list" aria-label="Article topics">
+                {% for tag in tags %}
+                <span class="tag" role="listitem">#{{ tag }}</span>
+                {% endfor %}
             </div>
-        </header>
+            {% endif %}
+        </div>
+    </header>
+    
+    <div class="post-content">
+        {{ content | safe }}
+    </div>
+    
+    <footer class="post-footer">
+        <nav aria-label="Article navigation">
+            <a href="/blog" class="back-to-blog">← Back to Blog</a>
+        </nav>
         
-        <div class="post-content">
-            {{ content | safe }}
+        <div class="article-cta">
+            <h2>Ready to Get Started?</h2>
+            <p>If you have concerns about your child's communication development, I'm here to help.</p>
+            <a href="/contact" class="cta-button">Schedule a Free Consultation</a>
         </div>
         
-        <footer class="post-footer">
-            <a href="/blog" class="back-to-blog">← Back to Blog</a>
-        </footer>
-    </div>
+        <!-- Breadcrumb Navigation -->
+        <nav aria-label="Breadcrumb" class="breadcrumb breadcrumb-footer">
+            <ol class="breadcrumb-list">
+                <li class="breadcrumb-item">
+                    <a href="/">Home</a>
+                </li>
+                <li class="breadcrumb-item">
+                    <a href="/blog">Blog</a>
+                </li>
+                <li class="breadcrumb-item" aria-current="page">
+                    {{ title }}
+                </li>
+            </ol>
+        </nav>
+    </footer>
 </article> 

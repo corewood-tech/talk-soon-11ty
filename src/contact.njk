@@ -5,8 +5,8 @@ description: "Contact licensed speech language pathologist Markie for childhood 
 ---
 
 <!-- Decorative Frame for Page Header -->
-<div class="page-decorative-frame">
-    <img src="/images/decor-left.svg" alt="" class="page-decor">
+<div class="page-decorative-frame" role="presentation" aria-hidden="true">
+    <img src="/images/decor-left.svg" alt="" class="page-decor" role="presentation">
 </div>
 
 <div class="page-container">
@@ -15,55 +15,77 @@ description: "Contact licensed speech language pathologist Markie for childhood 
     <p>Ready to take the first step toward better communication? We're here to help you on your journey to clearer, more confident speech and language skills.</p>
     
     <!-- Contact Information -->
-    <div class="contact-info-inline">
+    <section class="contact-info-inline" aria-labelledby="contact-info-heading">
+        <h2 id="contact-info-heading" class="visually-hidden">Contact Information</h2>
         <div class="contact-details">
             <div class="contact-item">
-                <a href="mailto:info@talksoon.org">
-                    <i data-lucide="mail"></i> 
+                <a href="mailto:info@talksoon.org" aria-label="Send email to info@talksoon.org">
+                    <i data-lucide="mail" aria-hidden="true"></i> 
                     info@talksoon.org
                 </a>
             </div>
             <div class="contact-item">
-                <a href="https://wa.me/50686312791">
-                    <i data-lucide="message-circle"></i> 
+                <a href="https://wa.me/50686312791" aria-label="Contact via WhatsApp at +506 8631 2791">
+                    <i data-lucide="message-circle" aria-hidden="true"></i> 
                     +506 8631 2791
                 </a>
             </div>
             <div class="contact-item">
-                <a href="https://maps.google.com/maps?q=Uvita,+Costa+Rica" target="_blank">
-                    <i data-lucide="map-pin"></i> 
+                <a href="https://maps.google.com/maps?q=Uvita,+Costa+Rica" target="_blank" aria-label="View Uvita, Costa Rica on Google Maps (opens in new tab)">
+                    <i data-lucide="map-pin" aria-hidden="true"></i> 
                     Uvita, Costa Rica
                 </a>
             </div>
         </div>
-    </div>
+    </section>
     
     <!-- Contact Form -->
-    <div class="contact-form-section" id="contact-form-section">
-        <h2>Send Us a Message</h2>
-        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contact-form">
+    <section class="contact-form-section" id="contact-form-section" aria-labelledby="contact-form-heading">
+        <h2 id="contact-form-heading">Send Us a Message</h2>
+        
+        <!-- Form Errors Container -->
+        <div id="form-errors" class="form-errors" role="alert" aria-live="polite" style="display: none;">
+            <h3>Please correct the following errors:</h3>
+            <ul id="error-list"></ul>
+        </div>
+        
+        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="contact-form" 
+              novalidate aria-describedby="form-description">
+            <p id="form-description" class="form-description">Required fields are marked with an asterisk (*)</p>
+            
             <input type="hidden" name="access_key" value="f5439a37-67ad-42d9-9f0f-96ac95dd477e">
             <input type="hidden" name="subject" value="New Contact Form Submission from TalkSoon Website">
             <input type="hidden" name="from_name" value="TalkSoon Website">
             
             <div class="form-group">
-                <label for="name">Name *</label>
-                <input type="text" id="name" name="name" required>
+                <label for="name" class="required">
+                    Name <span aria-label="required">*</span>
+                </label>
+                <input type="text" id="name" name="name" required 
+                       aria-describedby="name-error" aria-invalid="false">
+                <div id="name-error" class="field-error" role="alert" aria-live="polite"></div>
             </div>
             
             <div class="form-group">
-                <label for="email">Email *</label>
-                <input type="email" id="email" name="email" required>
+                <label for="email" class="required">
+                    Email <span aria-label="required">*</span>
+                </label>
+                <input type="email" id="email" name="email" required 
+                       aria-describedby="email-error email-help" aria-invalid="false">
+                <div id="email-help" class="help-text">We'll never share your email address</div>
+                <div id="email-error" class="field-error" role="alert" aria-live="polite"></div>
             </div>
             
             <div class="form-group">
                 <label for="phone">Phone</label>
-                <input type="tel" id="phone" name="phone">
+                <input type="tel" id="phone" name="phone" 
+                       aria-describedby="phone-help" aria-invalid="false">
+                <div id="phone-help" class="help-text">Optional - for phone consultations</div>
             </div>
             
             <div class="form-group">
                 <label for="service">Area of Concern</label>
-                <select id="service" name="service">
+                <select id="service" name="service" aria-describedby="service-help">
                     <option value="">Select a service...</option>
                     <option value="late-talker">Late Talker</option>
                     <option value="difficult-to-understand">Difficult to Understand</option>
@@ -72,41 +94,56 @@ description: "Contact licensed speech language pathologist Markie for childhood 
                     <option value="stuttering">Stuttering</option>
                     <option value="other">Other</option>
                 </select>
+                <div id="service-help" class="help-text">Help us understand your primary concern</div>
             </div>
             
             <div class="form-group">
                 <label for="age">Child's Age (if applicable)</label>
-                <input type="text" id="age" name="age" placeholder="e.g., 3 years old">
+                <input type="text" id="age" name="age" placeholder="e.g., 3 years old"
+                       aria-describedby="age-help">
+                <div id="age-help" class="help-text">This helps us provide age-appropriate guidance</div>
             </div>
             
             <div class="form-group">
-                <label for="message">Message *</label>
-                <textarea id="message" name="message" rows="5" required placeholder="Please describe your concerns or questions..."></textarea>
+                <label for="message" class="required">
+                    Message <span aria-label="required">*</span>
+                </label>
+                <textarea id="message" name="message" rows="5" required 
+                          placeholder="Please describe your concerns or questions..."
+                          aria-describedby="message-error message-help" aria-invalid="false"></textarea>
+                <div id="message-help" class="help-text">Please provide as much detail as possible about your concerns</div>
+                <div id="message-error" class="field-error" role="alert" aria-live="polite"></div>
             </div>
             
             <div class="form-group">
                 <label for="preferred-contact">Preferred Contact Method</label>
-                <select id="preferred-contact" name="preferred_contact">
+                <select id="preferred-contact" name="preferred_contact" aria-describedby="contact-help">
                     <option value="email">Email</option>
                     <option value="phone">Phone</option>
                     <option value="either">Either</option>
                 </select>
+                <div id="contact-help" class="help-text">How would you like us to reach out to you?</div>
             </div>
             
-            <button type="submit" class="submit-button">Send Message</button>
+            <button type="submit" class="submit-button" aria-describedby="submit-help">
+                <span class="button-text">Send Message</span>
+                <span class="button-loading" style="display: none;" aria-hidden="true">Sending...</span>
+            </button>
+            <div id="submit-help" class="help-text">Your message will be sent securely</div>
         </form>
-    </div>
+    </section>
     
     <!-- Thank You Message (Hidden by default) -->
-    <div class="thank-you-section" id="thank-you-section" style="display: none;">
+    <section class="thank-you-section" id="thank-you-section" style="display: none;" 
+             aria-labelledby="thank-you-heading" role="region">
         <!-- Decorative Frame for Thank You -->
-        <div class="page-decorative-frame">
-            <img src="/images/decor-left.svg" alt="" class="page-decor">
+        <div class="page-decorative-frame" role="presentation" aria-hidden="true">
+            <img src="/images/decor-left.svg" alt="" class="page-decor" role="presentation">
         </div>
         
         <div class="thank-you-content">
             <div class="thank-you-header">
-                <h2>Thank You for Reaching Out to TalkSoon!</h2>
+                <h2 id="thank-you-heading">Thank You for Reaching Out to TalkSoon!</h2>
             </div>
             
             <div class="thank-you-message">
@@ -114,13 +151,13 @@ description: "Contact licensed speech language pathologist Markie for childhood 
                 
                 <p>In the meantime, feel free to explore our resources or reach out directly if you have any urgent questions.</p>
                 
-                <div class="thank-you-actions">
+                <nav class="thank-you-actions" aria-label="Next steps">
                     <a href="/" class="cta-button">Return to Home</a>
                     <a href="/blog" class="cta-button secondary">Read Our Blog</a>
-                </div>
+                </nav>
             </div>
         </div>
-    </div>
+    </section>
 </div>
 
 <script>
@@ -130,10 +167,23 @@ document.getElementById('contact-form').addEventListener('submit', async functio
     const form = e.target;
     const formData = new FormData(form);
     const submitButton = form.querySelector('.submit-button');
+    const buttonText = submitButton.querySelector('.button-text');
+    const buttonLoading = submitButton.querySelector('.button-loading');
+    
+    // Clear previous errors
+    clearFormErrors();
+    
+    // Validate form
+    if (!validateForm(form)) {
+        return;
+    }
     
     // Disable submit button and show loading state
     submitButton.disabled = true;
-    submitButton.textContent = 'Sending...';
+    submitButton.setAttribute('aria-busy', 'true');
+    buttonText.style.display = 'none';
+    buttonLoading.style.display = 'inline';
+    buttonLoading.setAttribute('aria-hidden', 'false');
     
     try {
         const response = await fetch('https://api.web3forms.com/submit', {
@@ -146,22 +196,144 @@ document.getElementById('contact-form').addEventListener('submit', async functio
             document.getElementById('contact-form-section').style.display = 'none';
             
             // Show the thank you section
-            document.getElementById('thank-you-section').style.display = 'block';
+            const thankYouSection = document.getElementById('thank-you-section');
+            thankYouSection.style.display = 'block';
+            
+            // Focus on thank you heading for screen readers
+            document.getElementById('thank-you-heading').focus();
             
             // Scroll to the thank you section
-            document.getElementById('thank-you-section').scrollIntoView({ 
+            thankYouSection.scrollIntoView({ 
                 behavior: 'smooth' 
             });
+            
+            // Announce success to screen readers
+            announceToScreenReader('Your message has been sent successfully. Thank you for contacting TalkSoon.');
         } else {
             throw new Error('Form submission failed');
         }
     } catch (error) {
         // Re-enable the submit button
         submitButton.disabled = false;
-        submitButton.textContent = 'Send Message';
+        submitButton.setAttribute('aria-busy', 'false');
+        buttonText.style.display = 'inline';
+        buttonLoading.style.display = 'none';
+        buttonLoading.setAttribute('aria-hidden', 'true');
         
         // Show error message
-        alert('There was an error sending your message. Please try again or contact us directly.');
+        showFormError('There was an error sending your message. Please try again or contact us directly.');
+        announceToScreenReader('There was an error sending your message. Please try again.');
     }
 });
+
+function validateForm(form) {
+    const errors = [];
+    
+    // Validate name
+    const name = form.querySelector('#name');
+    if (!name.value.trim()) {
+        errors.push({field: name, message: 'Name is required'});
+    }
+    
+    // Validate email
+    const email = form.querySelector('#email');
+    if (!email.value.trim()) {
+        errors.push({field: email, message: 'Email is required'});
+    } else if (!isValidEmail(email.value)) {
+        errors.push({field: email, message: 'Please enter a valid email address'});
+    }
+    
+    // Validate message
+    const message = form.querySelector('#message');
+    if (!message.value.trim()) {
+        errors.push({field: message, message: 'Message is required'});
+    }
+    
+    if (errors.length > 0) {
+        showFormErrors(errors);
+        return false;
+    }
+    
+    return true;
+}
+
+function isValidEmail(email) {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+}
+
+function showFormErrors(errors) {
+    const errorContainer = document.getElementById('form-errors');
+    const errorList = document.getElementById('error-list');
+    
+    // Clear previous errors
+    errorList.innerHTML = '';
+    
+    errors.forEach(error => {
+        // Show field-specific error
+        const fieldError = document.getElementById(error.field.id + '-error');
+        if (fieldError) {
+            fieldError.textContent = error.message;
+        }
+        
+        // Mark field as invalid
+        error.field.setAttribute('aria-invalid', 'true');
+        
+        // Add to main error list
+        const li = document.createElement('li');
+        li.textContent = error.message;
+        errorList.appendChild(li);
+    });
+    
+    // Show error container
+    errorContainer.style.display = 'block';
+    errorContainer.focus();
+    
+    // Scroll to first error
+    if (errors.length > 0) {
+        errors[0].field.focus();
+    }
+}
+
+function showFormError(message) {
+    const errorContainer = document.getElementById('form-errors');
+    const errorList = document.getElementById('error-list');
+    
+    errorList.innerHTML = `<li>${message}</li>`;
+    errorContainer.style.display = 'block';
+    errorContainer.focus();
+}
+
+function clearFormErrors() {
+    // Clear main error container
+    const errorContainer = document.getElementById('form-errors');
+    errorContainer.style.display = 'none';
+    
+    // Clear field-specific errors
+    const fieldErrors = document.querySelectorAll('.field-error');
+    fieldErrors.forEach(error => {
+        error.textContent = '';
+    });
+    
+    // Reset aria-invalid attributes
+    const inputs = document.querySelectorAll('[aria-invalid="true"]');
+    inputs.forEach(input => {
+        input.setAttribute('aria-invalid', 'false');
+    });
+}
+
+function announceToScreenReader(message) {
+    const announcement = document.createElement('div');
+    announcement.setAttribute('aria-live', 'polite');
+    announcement.setAttribute('aria-atomic', 'true');
+    announcement.className = 'sr-only';
+    announcement.textContent = message;
+    
+    document.body.appendChild(announcement);
+    
+    // Remove after announcement
+    setTimeout(() => {
+        document.body.removeChild(announcement);
+    }, 1000);
+}
 </script> 

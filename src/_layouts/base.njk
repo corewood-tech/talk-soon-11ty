@@ -41,7 +41,7 @@
       "name": "TalkSoon Speech Language Pathology",
       "description": "Professional speech language pathology services specializing in childhood communication disorders, late talkers, autism support, and stuttering therapy in Southern Zone Costa Rica.",
              "url": "https://talksoon.org",
-       "telephone": "+506-XXXX-XXXX",
+       "telephone": "+506-8631-2791",
        "email": "info@talksoon.org",
       "address": {
         "@type": "PostalAddress",
@@ -145,22 +145,24 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <!-- Header Logo Component -->
-    <a href="/" class="header-logo">
-        {% image "src/images/logo.png", "TalkSoon Speech Therapy", "(max-width: 768px) 120px, 150px" %}
-        <div class="header-logo-text">
-            <h1 class="header-logo-title">TALK SOON</h1>
-            <p class="header-logo-subtitle">SPEECH THERAPY</p>
-        </div>
-    </a>
+    <!-- Header -->
+    <header role="banner">
+        <a href="/" class="header-logo" aria-label="TalkSoon Speech Therapy - Go to homepage">
+            {% image "src/images/logo.png", "TalkSoon Speech Therapy", "(max-width: 768px) 120px, 150px" %}
+            <div class="header-logo-text">
+                <span class="header-logo-title">TALK SOON</span>
+                <span class="header-logo-subtitle">SPEECH THERAPY</span>
+            </div>
+        </a>
+    </header>
 
-    <main>
+    <main role="main">
         {{ content | safe }}
     </main>
     
     {% if not hideFooter %}
-    <footer class="site-footer">
-        <nav class="footer-nav">
+    <footer class="site-footer" role="contentinfo">
+        <nav class="footer-nav" role="navigation" aria-label="Footer navigation">
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/blog">Blog</a>
