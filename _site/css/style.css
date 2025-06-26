@@ -1179,67 +1179,7 @@ textarea[aria-invalid="true"] {
   }
 }
 
-/* Breadcrumb Navigation */
-.breadcrumb {
-  margin: 2rem 0 1rem 0;
-  padding: 0 2rem;
-}
 
-.breadcrumb-footer {
-  margin: 2rem 0 0 0;
-  padding: 2rem 0 0 0;
-  border-top: 2px solid #f0f0f0;
-  text-align: center;
-}
-
-.breadcrumb-list {
-  display: flex;
-  flex-wrap: nowrap;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 0.9rem;
-  overflow: hidden;
-}
-
-.breadcrumb-item {
-  display: flex;
-  align-items: center;
-  min-width: 0;
-  flex-shrink: 1;
-}
-
-.breadcrumb-item:last-child {
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  max-width: 300px;
-}
-
-.breadcrumb-item:not(:last-child)::after {
-  content: "›";
-  margin: 0 0.5rem;
-  color: var(--text-color);
-  opacity: 0.6;
-}
-
-.breadcrumb-item a {
-  color: var(--highlight-color);
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.breadcrumb-item a:hover {
-  color: var(--accent-color);
-  text-decoration: underline;
-}
-
-.breadcrumb-item[aria-current="page"] {
-  color: var(--text-color);
-  opacity: 0.8;
-  font-weight: 500;
-}
 
 /* Article CTA Section */
 .article-cta {
@@ -1292,21 +1232,8 @@ textarea[aria-invalid="true"] {
   font-weight: 500;
 }
 
-/* Mobile breadcrumb improvements */
+/* Mobile improvements */
 @media (max-width: 768px) {
-  .breadcrumb {
-    padding: 0 1rem;
-    margin: 1rem 0 0.5rem 0;
-  }
-  
-  .breadcrumb-list {
-    font-size: 0.85rem;
-  }
-  
-  .breadcrumb-item:last-child {
-    max-width: 200px;
-  }
-  
   .article-cta {
     padding: 1.5rem 0;
   }
@@ -1339,9 +1266,5 @@ textarea[aria-invalid="true"] {
   
   .submit-button {
     border: 2px solid var(--text-color);
-  }
-  
-  .breadcrumb-item a {
-    text-decoration: underline;
   }
 } 
