@@ -41,7 +41,7 @@
       "name": "TalkSoon Speech Language Pathology",
       "description": "Professional speech language pathology services specializing in childhood communication disorders, late talkers, autism support, and stuttering therapy in Southern Zone Costa Rica.",
              "url": "https://talksoon.org",
-       "telephone": "+506-XXXX-XXXX",
+       "telephone": "+506-8631-2791",
        "email": "info@talksoon.org",
       "address": {
         "@type": "PostalAddress",
@@ -145,91 +145,104 @@
     <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <!-- Header Logo Component -->
-    <a href="/" class="header-logo">
-        <picture><source type="image/webp" srcset="/img/u9d30kK9jc-300.webp 300w, /img/u9d30kK9jc-600.webp 600w" sizes="(max-width: 768px) 120px, 150px"><img src="/img/u9d30kK9jc-300.jpeg" alt="TalkSoon Speech Therapy" loading="lazy" decoding="async" width="600" height="518" srcset="/img/u9d30kK9jc-300.jpeg 300w, /img/u9d30kK9jc-600.jpeg 600w" sizes="(max-width: 768px) 120px, 150px"></picture>
-        <div class="header-logo-text">
-            <h1 class="header-logo-title">TALK SOON</h1>
-            <p class="header-logo-subtitle">SPEECH THERAPY</p>
-        </div>
-    </a>
+    <!-- Header -->
+    <header role="banner">
+        <a href="/" class="header-logo" aria-label="TalkSoon Speech Therapy - Go to homepage">
+            <picture><source type="image/webp" srcset="/img/u9d30kK9jc-300.webp 300w, /img/u9d30kK9jc-600.webp 600w" sizes="(max-width: 768px) 120px, 150px"><img src="/img/u9d30kK9jc-300.jpeg" alt="TalkSoon Speech Therapy" loading="lazy" decoding="async" width="600" height="518" srcset="/img/u9d30kK9jc-300.jpeg 300w, /img/u9d30kK9jc-600.jpeg 600w" sizes="(max-width: 768px) 120px, 150px"></picture>
+            <div class="header-logo-text">
+                <span class="header-logo-title">TALK SOON</span>
+                <span class="header-logo-subtitle">SPEECH THERAPY</span>
+            </div>
+        </a>
+    </header>
 
-    <main>
+    <main role="main">
         
 <div class="landing-container">
+    <!-- Main heading for SEO and accessibility -->
+    <h1 class="visually-hidden">Speech Language Pathology Services in Southern Costa Rica</h1>
+    
     <div class="infographic-layout">
         <!-- Markie's Picture Section -->
-        <div class="markie-section">
-            <a href="/about" class="markie-picture">
+        <section class="markie-section" aria-labelledby="therapist-intro">
+            <h2 id="therapist-intro" class="visually-hidden">Meet Your Speech Therapist</h2>
+            <a href="/about" class="markie-picture" aria-label="Learn more about Markie, your speech language pathologist">
                 <picture><source type="image/webp" srcset="/img/uWJq-vAvYv-300.webp 300w, /img/uWJq-vAvYv-600.webp 600w, /img/uWJq-vAvYv-900.webp 900w, /img/uWJq-vAvYv-1200.webp 1200w" sizes="(max-width: 768px) 200px, 300px"><img src="/img/uWJq-vAvYv-300.jpeg" alt="Markie - Speech Language Pathologist" loading="lazy" decoding="async" width="1200" height="1200" srcset="/img/uWJq-vAvYv-300.jpeg 300w, /img/uWJq-vAvYv-600.jpeg 600w, /img/uWJq-vAvYv-900.jpeg 900w, /img/uWJq-vAvYv-1200.jpeg 1200w" sizes="(max-width: 768px) 200px, 300px"></picture>
             </a>
-        </div>
+        </section>
         
-        <!-- Radiating Links Section -->
-        <div class="radiating-links">
-            <a href="/blog/posts/when-will-my-child-start-talking/" class="concern-link">
+        <!-- Services Section -->
+        <section class="radiating-links" aria-labelledby="services-heading">
+            <h2 id="services-heading" class="visually-hidden">Communication Concerns We Address</h2>
+            
+            <a href="/blog/posts/when-will-my-child-start-talking/" class="concern-link" 
+               aria-describedby="late-talker-desc">
                 <div class="concern-content">
-                    <h3>Late Talker</h3>
-                    <p>When should my child say their first words? How many words should my toddler have?</p>
+                    <h3 id="late-talker-heading">Late Talker</h3>
+                    <p id="late-talker-desc">When should my child say their first words? How many words should my toddler have?</p>
                 </div>
-                <div class="concern-icon">
-                    <img src="/images/late-talker.svg" alt="Late Talker Icon">
+                <div class="concern-icon" role="img" aria-labelledby="late-talker-heading">
+                    <img src="/images/late-talker.svg" alt="" role="presentation">
                 </div>
             </a>
             
-            <a href="/blog/posts/when-will-my-childs-speech-be-clear/" class="concern-link">
+            <a href="/blog/posts/when-will-my-childs-speech-be-clear/" class="concern-link"
+               aria-describedby="difficult-understand-desc">
                 <div class="concern-content">
-                    <h3>Difficult to Understand</h3>
-                    <p>My child makes a lot of errors when speaking; does he need speech therapy?</p>
+                    <h3 id="difficult-understand-heading">Difficult to Understand</h3>
+                    <p id="difficult-understand-desc">My child makes a lot of errors when speaking; does he need speech therapy?</p>
                 </div>
-                <div class="concern-icon">
-                    <img src="/images/hard-understand.svg" alt="Difficult to Understand Icon">
+                <div class="concern-icon" role="img" aria-labelledby="difficult-understand-heading">
+                    <img src="/images/hard-understand.svg" alt="" role="presentation">
                 </div>
             </a>
             
-            <a href="/blog/posts/beyond-first-words-grammar-development/" class="concern-link">
+            <a href="/blog/posts/beyond-first-words-grammar-development/" class="concern-link"
+               aria-describedby="grammar-vocab-desc">
                 <div class="concern-content">
-                    <h3>Grammar and vocabulary</h3>
-                    <p>My child's always using the wrong verbs and pronouns; is that age-appropriate?</p>
+                    <h3 id="grammar-vocab-heading">Grammar and Vocabulary</h3>
+                    <p id="grammar-vocab-desc">My child's always using the wrong verbs and pronouns; is that age-appropriate?</p>
                 </div>
-                <div class="concern-icon">
-                    <img src="/images/grammar-vocab.svg" alt="Grammar and Vocabulary Icon">
+                <div class="concern-icon" role="img" aria-labelledby="grammar-vocab-heading">
+                    <img src="/images/grammar-vocab.svg" alt="" role="presentation">
                 </div>
             </a>
             
-            <a href="/blog/posts/understanding-autism-communication-signs/" class="concern-link">
+            <a href="/blog/posts/understanding-autism-communication-signs/" class="concern-link"
+               aria-describedby="autism-desc">
                 <div class="concern-content">
-                    <h3>Autism</h3>
-                    <p>My child has delayed speech, difficulty making friends, and a hard time reading facial expressions. Can an SLP help?</p>
+                    <h3 id="autism-heading">Autism</h3>
+                    <p id="autism-desc">My child has delayed speech, difficulty making friends, and a hard time reading facial expressions. Can an SLP help?</p>
                 </div>
-                <div class="concern-icon">
-                    <img src="/images/autism.svg" alt="Autism Icon">
+                <div class="concern-icon" role="img" aria-labelledby="autism-heading">
+                    <img src="/images/autism.svg" alt="" role="presentation">
                 </div>
             </a>
             
-            <a href="/blog/posts/understanding-stuttering-fluency/" class="concern-link">
+            <a href="/blog/posts/understanding-stuttering-fluency/" class="concern-link"
+               aria-describedby="stuttering-desc">
                 <div class="concern-content">
-                    <h3>Stuttering</h3>
-                    <p>My child repeats the first part of words over and over again. Does she need to see an SLP?</p>
+                    <h3 id="stuttering-heading">Stuttering</h3>
+                    <p id="stuttering-desc">My child repeats the first part of words over and over again. Does she need to see an SLP?</p>
                 </div>
-                <div class="concern-icon">
-                    <img src="/images/stutter.svg" alt="Stuttering Icon">
+                <div class="concern-icon" role="img" aria-labelledby="stuttering-heading">
+                    <img src="/images/stutter.svg" alt="" role="presentation">
                 </div>
             </a>
-        </div>
+        </section>
     </div>
     
     <!-- Decorative Frame Above Footer -->
-    <div class="decorative-frame">
-        <img src="/images/decor-left.svg" alt="" class="decor-left">
+    <div class="decorative-frame" role="presentation" aria-hidden="true">
+        <img src="/images/decor-left.svg" alt="" class="decor-left" role="presentation">
     </div>
 </div> 
 
     </main>
     
     
-    <footer class="site-footer">
-        <nav class="footer-nav">
+    <footer class="site-footer" role="contentinfo">
+        <nav class="footer-nav" role="navigation" aria-label="Footer navigation">
             <a href="/">Home</a>
             <a href="/about">About</a>
             <a href="/blog">Blog</a>
