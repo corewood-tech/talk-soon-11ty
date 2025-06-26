@@ -8,7 +8,7 @@ excerpt: "Learn the difference between normal childhood disfluency and stutterin
 
 "My 4-year-old has started repeating words and sometimes gets stuck on sounds. Is this normal, or should I be worried about stuttering?"
 
-As a speech-language pathologist, I hear this question frequently from concerned parents. The truth is, most young children go through periods of normal disfluency as their language skills rapidly develop. However, some children do develop stuttering—a communication disorder that affects the flow and rhythm of speech.
+As a speech-language pathologist, I hear this question frequently from concerned parents. The truth is, some young children go through periods of normal disfluency as their language skills rapidly develop. However, some children do develop a fluency disorder.
 
 Let's explore what stuttering is, how to distinguish between normal childhood disfluency and a fluency disorder, and how speech-language pathologists can help children develop confidence in their communication.
 
@@ -16,19 +16,11 @@ Let's explore what stuttering is, how to distinguish between normal childhood di
 
 Stuttering is a communication disorder that affects the fluency and flow of speech. It's characterized by involuntary repetitions, prolongations, or blocks that interrupt the smooth flow of speaking. Stuttering typically begins in childhood, usually between ages 2-5, when language skills are developing rapidly.
 
-Examples of stuttering include:
-- **Sound repetitions**: "b-b-b-ball"
-- **Syllable repetitions**: "ba-ba-baseball"
-- **Word repetitions**: "I-I-I want to go"
-- **Sound prolongations**: "Ssssssometimes I like to play"
-- **Blocks**: Getting "stuck" on a sound with no sound coming out
-- **Interjections**: "Um, um, I want to, um, go outside"
-
-It's important to understand that stuttering is not caused by nervousness, anxiety, or emotional problems, though these feelings may develop as a result of stuttering. Stuttering has neurological and genetic components—it often runs in families and affects the brain's ability to coordinate the complex movements needed for smooth speech.
+Stuttering has neurological and genetic components—it often runs in families and affects the brain's ability to coordinate the complex movements needed for smooth speech.
 
 ## Normal Childhood Disfluency vs. Stuttering
 
-Most children between ages 2-5 experience some disfluency as their language skills develop faster than their motor speech coordination. This is completely normal! Here's how to tell the difference:
+Most children between ages 2-5 experience some disfluency as their language skills develop faster than their motor speech coordination. It can be difficult at this age to distinguish what is more likely to be normal preschool disfluency or a true fluency disorder. A speech-language pathologist can evaluate children to determine which is more likely; she will also collect a case history to determine red flags for stuttering persistence.
 
 ### Normal Childhood Disfluency:
 - **Whole word repetitions**: "I-I-I want juice" (repeating entire words)
@@ -80,7 +72,7 @@ Understanding different types of dysfluencies helps us better assess and treat f
 - Word repetitions: "paper-paper-paper"
 
 **Prolongations:**
-- Extending sounds: "Ppppppaper"
+- Extending sounds: "Paaaaaaper"
 - Can occur on any sound in a word
 
 **Blocks:**
@@ -100,14 +92,15 @@ At Talk Soon Speech Therapy LLC, our philosophy centers on helping individuals f
 
 ### For Preschool Children (Ages 2-5):
 
-**Indirect Approaches:**
+**Indirect Approach:**
 - Creating a supportive communication environment
 - Teaching family members how to model easy, relaxed speech
 - Reducing communication pressures and time constraints
 - Building overall communication confidence
 
-**Direct Approaches (when appropriate):**
-- Teaching "easy speech" or "smooth talking" techniques
+**Direct Approach (when appropriate):**
+- Teaching "easy speech" and other fluency-enhancing techniques
+- Learning to differentiate between "smooth" and "bumpy" speech.
 - Helping children recognize different ways of talking
 - Building confidence through positive communication experiences
 - Teaching simple fluency strategies through play and games
